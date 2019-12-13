@@ -10,3 +10,5 @@
   - [迪米特原则](/designprinciple/迪米特原则.md)
 
 - Design Patterns
+
+  - [单例模式](/designpatterns/单例模式.md)
