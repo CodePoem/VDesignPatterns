@@ -1,0 +1,27 @@
+<mxfile host="www.draw.io" modified="2019-12-09T15:36:17.843Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="5zSa4-IN8JmHs97jw2t4" version="12.3.8" type="github" pages="1">
+  <diagram id="vsEc4YfbuyO3bm87osk3" name="第 1 页">
+    <mxGraphModel dx="1186" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="3MKI-zA-rTLJWoaIbHeD-2" value="Singleton" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#F08E81;strokeColor=#36393d;labelBackgroundColor=none;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="310" y="280" width="160" height="112" as="geometry">
+            <mxRectangle x="200" y="240" width="100" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3MKI-zA-rTLJWoaIbHeD-3" value="- instance: Singleton" style="text;strokeColor=#36393d;fillColor=#F08E81;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;fontColor=#FFFFFF;" vertex="1" parent="3MKI-zA-rTLJWoaIbHeD-2">
+          <mxGeometry y="26" width="160" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="3MKI-zA-rTLJWoaIbHeD-4" value="" style="line;strokeWidth=1;fillColor=#F08E81;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#36393d;labelBackgroundColor=none;fontColor=#FFFFFF;" vertex="1" parent="3MKI-zA-rTLJWoaIbHeD-2">
+          <mxGeometry y="52" width="160" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="3MKI-zA-rTLJWoaIbHeD-5" value="- Singleton()" style="text;strokeColor=#36393d;fillColor=#F08E81;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;fontColor=#FFFFFF;" vertex="1" parent="3MKI-zA-rTLJWoaIbHeD-2">
+          <mxGeometry y="60" width="160" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="3MKI-zA-rTLJWoaIbHeD-13" value="+ getInstance()" style="text;strokeColor=#36393d;fillColor=#F08E81;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;fontColor=#FFFFFF;" vertex="1" parent="3MKI-zA-rTLJWoaIbHeD-2">
+          <mxGeometry y="86" width="160" height="26" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
