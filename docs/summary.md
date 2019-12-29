@@ -2,22 +2,22 @@
 
 - Design Principle
 
-  - [单一职责原则](/designprinciple/单一职责原则.md)
-  - [开闭原则](/designprinciple/开闭原则.md)
-  - [里式替换原则](/designprinciple/里式替换原则.md)
-  - [依赖倒置原则](/designprinciple/依赖倒置原则.md)
-  - [接口隔离原则](/designprinciple/接口隔离原则.md)
-  - [迪米特原则](/designprinciple/迪米特原则.md)
+  - [单一职责原则](/designprinciple/SRP.md)
+  - [开闭原则](/designprinciple/OCP.md)
+  - [里式替换原则](/designprinciple/LSP.md)
+  - [依赖倒置原则](/designprinciple/DIP.md)
+  - [接口隔离原则](/designprinciple/ISP.md)
+  - [迪米特原则](/designprinciple/LODorLKP.md)
 
 - Design Patterns
 
   - 创建型模式
   
-    - [单例模式](/designpatterns/单例模式.md)
-    - [建造者模式](/designpatterns/建造者模式.md)
-    - [原型模式](/designpatterns/原型模式.md)
-    - [工厂方法模式](/designpatterns/工厂方法模式.md)
-    - [抽象工厂模式](/designpatterns/抽象工厂模式.md)
+    - [单例模式](/designpatterns/Singleton.md)
+    - [建造者模式](/designpatterns/Builder.md)
+    - [原型模式](/designpatterns/Prototype.md)
+    - [工厂方法模式](/designpatterns/FactoryMethod.md)
+    - [抽象工厂模式](/designpatterns/AbstractFactory.md)
 
   - 行为型模式
   
