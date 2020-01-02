@@ -43,7 +43,7 @@ public class ConcreteFactory extends Factory {
     @Override
     public Product creteProduct() {
         // 具体工厂类决定创建出什么具体产品
-        return ConcreteProductA();
+        return new ConcreteProductA();
         // return ConcreteProductB();
     }
 }
@@ -138,7 +138,7 @@ public class ConcreteProduct extends Product {
 public class Factory {
     public static Product createProduct() {
          // 决定创建出什么具体产品
-        return ConcreteProductA();
+        return new ConcreteProductA();
         // return ConcreteProductB();
     }
 }
