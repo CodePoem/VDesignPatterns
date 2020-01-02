@@ -23,7 +23,7 @@
   
     - [策略模式](/designpatterns/Strategy.md)
     - [状态模式](/designpatterns/State.md)
-    - [责任链模式](/designpatterns/责任链模式.md)
+    - [责任链模式](/designpatterns/ChainOfResponsibility.md)
     - [解释器模式](/designpatterns/解释器模式.md)
     - [命令模式](/designpatterns/命令模式.md)
     - [观察者模式](/designpatterns/观察者模式.md)
