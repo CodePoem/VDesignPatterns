@@ -22,7 +22,7 @@
   - 行为型模式
   
     - [策略模式](/designpatterns/Strategy.md)
-    - [状态模式](/designpatterns/状态模式.md)
+    - [状态模式](/designpatterns/State.md)
     - [责任链模式](/designpatterns/责任链模式.md)
     - [解释器模式](/designpatterns/解释器模式.md)
     - [命令模式](/designpatterns/命令模式.md)

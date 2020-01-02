@@ -14,7 +14,7 @@
 
 为什么需要策略模式？
 
-让算法的变化独立于调用者。
+让算法的变化独立于调用者。策略模式符合开闭原则，可以灵活地注入算法实现，从而达到很好的可扩展性。
 
 ## 实践（how）
 
@@ -41,8 +41,8 @@ public class Context {
 
     private Strategy mStrategy;
 
-    public void setStrategy(Strategy mStrategy) {
-        this.mStrategy = mStrategy;
+    public void setStrategy(Strategy strategy) {
+        this.mStrategy = strategy;
     }
 
     public void algorithm() {
@@ -50,3 +50,6 @@ public class Context {
     }
 }
 ```
+
+PS：
+与状态模式容易混淆，但实际上策略模式更关注的是算法（算法往往是独立的），而状态模式更关注的是状态对行为的影响（状态有时候可能会有依赖）。
