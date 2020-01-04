@@ -27,11 +27,11 @@
     - [解释器模式](/designpatterns/Interpreter.md)
     - [命令模式](/designpatterns/Command.md)
     - [观察者模式](/designpatterns/Observer.md)
-    - [备忘录模式](/designpatterns/备忘录模式.md)
-    - [迭代器模式](/designpatterns/迭代器模式.md)
-    - [模板方法模式](/designpatterns/模板方法模式.md)
-    - [访问者模式](/designpatterns/访问者模式.md)
-    - [中介者模式](/designpatterns/中介者模式.md)
+    - [备忘录模式](/designpatterns/Memento.md)
+    - [迭代器模式](/designpatterns/Iterator.md)
+    - [模板方法模式](/designpatterns/TemplateMethod.md)
+    - [访问者模式](/designpatterns/Visitor.md)
+    - [中介者模式](/designpatterns/Mediator.md)
 
   - 结构型模式模式
   
