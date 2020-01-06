@@ -35,10 +35,10 @@
 
   - 结构型模式模式
   
-    - [代理模式](/designpatterns/代理模式.md)
-    - [组合模式](/designpatterns/组合模式.md)
-    - [适配器模式](/designpatterns/适配器模式.md)
-    - [装饰模式](/designpatterns/装饰模式.md)
-    - [享元模式](/designpatterns/享元模式.md)
-    - [外观模式](/designpatterns/外观模式.md)
-    - [桥接模式](/designpatterns/桥接模式.md)
+    - [代理模式](/designpatterns/Proxy.md)
+    - [组合模式](/designpatterns/Composite.md)
+    - [适配器模式](/designpatterns/Adapter.md)
+    - [装饰模式](/designpatterns/Decorator.md)
+    - [享元模式](/designpatterns/Flyweight.md)
+    - [外观模式](/designpatterns/Facade.md)
+    - [桥接模式](/designpatterns/Bridge.md)

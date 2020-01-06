@@ -88,7 +88,7 @@ public class ObjectStructure {
     }
 
     public void accept(Visitor visitor) {
-        forin (Element element in elements) {
+        for (Element element : elements) {
             element.accept();
         }
     }

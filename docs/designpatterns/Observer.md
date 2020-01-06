@@ -42,7 +42,7 @@ public abstract class Subject {
     }
 
     public void notify(Object object) {
-        for(observer in observers) {
+        for (Observer observer : observers) {
             observer.update(object);
         }
     }
@@ -51,7 +51,7 @@ public abstract class Subject {
 public class ConcreteSubject extends Subject {
     @Overrite
     public void notify(Object object) {
-        for(observer in observers) {
+        for (Observer observer : observers) {
             boolean matched = false;
             // jude matched
             if(matched) {
