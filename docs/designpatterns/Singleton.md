@@ -90,6 +90,8 @@ public class Singleton {
 - 基于静态变量+同步，增加一层 instance 的 null 判断，避免不必要的同步（ instance 已创建的情况下不需要同步）。
 - 对静态变量 instance 加 volatile 关键字，保证可见性和禁止指令重排序（通过内存屏障实现），但不能保证原子性。
 
+第二个 null 判断是为了避免多个线程通过第一个 null 判断，而造成多次实例化。
+
 instance = new Singleton()语句看起来是一句代码，实际上并不是一个原子操作，它会被编译成多条汇编指令。大致做了三件事：
 
 1. 给 Singleton 实例分配内存。
@@ -97,6 +99,8 @@ instance = new Singleton()语句看起来是一句代码，实际上并不是一
 3. 将 instance 对象指向分配的内存空间。
 
 由于指令重排序优化（在保证单线程执行结果正确的情况下优化指令执行执行速度），上述（2）（3）的执行顺序是不能够保证的。
+
+volatile通过禁止指令重排序的方式，避免多个线程在第一个null判断时判断已实例化（实际因为指令重排序instance尚未指向分配的内存空间）。
 
 #### 4.静态变量初始化（饿汉，线程安全）
 
@@ -114,6 +118,7 @@ public class Singleton {
 ```
   
 - Singleton 中的静态变量 instance 基于 classloder 机制避免了多线程的同步问题。
+
 - 没有懒加载效果，instance 在 Singleton 装载的时候就实例化。
 
 #### 5.静态代码块初始化（饿汉，线程安全）
@@ -154,6 +159,11 @@ public class Singleton {
 ```
 
 - 静态内部类中的静态变量 INSTANCE 基于 classloder 机制避免了多线程的同步问题。
+
+ClassLoader的loadClass方法在加载类的时候使用了synchronized关键字。也正是因为这样， 除非被重写，这个方法默认在整个装载过程中都是同步的，也就是保证了线程安全。
+
+所以，以上各种方法，虽然并没有显示的使用synchronized，但是还是其底层实现原理还是用到了synchronized。
+
 - 懒加载，Singleton 装载的时候 INSTANCE 不一定被初始化，只有显示调用 getInstance() SingletonHolder 才会被装载从而 INSTANCE 才会初始化。
 
 #### 7.枚举
@@ -201,3 +211,35 @@ public class Singleton {
 #### 防御反射攻击
 
 枚举法实现单例模式。
+
+### 无锁单例
+
+使用 CAS
+
+```java
+public class Singleton {
+    private static final AtomicReference<Singleton> INSTANCE = new AtomicReference<Singleton>();
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        for (;;) {
+            Singleton singleton = INSTANCE.get();
+            if (null != singleton) {
+                return singleton;
+            }
+
+            singleton = new Singleton();
+            if (INSTANCE.compareAndSet(null, singleton)) {
+                return singleton;
+            }
+        }
+    }
+}
+```
+
+- 不需要使用传统的锁机制来保证线程安全,CAS是一种基于忙等待的算法,依赖底层硬件的实现,相对于锁它没有线程切换和阻塞的额外消耗,可以支持较大的并行度。
+
+- 忙等待可能一直执行不成功(一直在死循环中),会对CPU造成较大的执行开销。
+
+- N个线程同时执行到singleton = new Singleton();的时候，会有大量对象创建，很可能导致内存溢出。
