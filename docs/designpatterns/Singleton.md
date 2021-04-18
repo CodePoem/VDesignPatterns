@@ -29,13 +29,26 @@ public class Singleton {
     private static Singleton instance;
 
     private Singleton() {
-    }
+    }`
 
     public static Singleton getInstance() {
         if (instance == null) {
             instance = new Singleton();
         }
         return instance;
+    }
+}
+```
+
+```kotlin
+class Singleton private constructor(private val param: String) {
+
+    companion object {
+
+       private var instance: Singleton? = null
+
+        fun getInstance(param: String) =
+                instance ?: Singleton(param).also { instance = it }
     }
 }
 ```
@@ -61,8 +74,22 @@ public class Singleton {
 }
 ```
 
-- 基于静态变量的单例在获取单例的方法上加上了同步关键字synchronized，能确保多线程场景下的单例。
-- 效率较低，存在不必要的同步（instance已创建的情况下不需要同步）。
+```kotlin
+class Singleton private constructor(private val param: String) {
+
+    companion object {
+
+        private var instance: Singleton? = null
+
+        @Synchronized
+        fun getInstance(param: String) =
+            instance ?: Singleton(param).also { instance = it }
+    }
+}
+```
+
+- 基于静态变量的单例在获取单例的方法上加上了同步关键字 synchronized，能确保多线程场景下的单例。
+- 效率较低，存在不必要的同步（instance 已创建的情况下不需要同步）。
 
 #### 3. DCL(double checked locking)双重校验锁（懒汉，线程安全）
 
@@ -76,13 +103,28 @@ public class Singleton {
     public static Singleton getInstance() {
         if (instance == null) {
             // 类锁
-            synchronized (Singleton.class) {  
+            synchronized (Singleton.class) {
                 if (instance == null) {
                     instance = new Singleton();
                 }
             }
         }
         return instance;
+    }
+}
+```
+
+```kotlin
+class Singleton private constructor(private val param: String) {
+
+    companion object {
+
+        @Volatile private var instance: Singleton? = null
+
+        fun getInstance(param: String) =
+                instance ?: synchronized(this) {
+                    instance ?: Singleton(param).also { instance = it }
+                }
     }
 }
 ```
@@ -100,7 +142,7 @@ instance = new Singleton()语句看起来是一句代码，实际上并不是一
 
 由于指令重排序优化（在保证单线程执行结果正确的情况下优化指令执行执行速度），上述（2）（3）的执行顺序是不能够保证的。
 
-volatile通过禁止指令重排序的方式，避免多个线程在第一个null判断时判断已实例化（实际因为指令重排序instance尚未指向分配的内存空间）。
+volatile 通过禁止指令重排序的方式，避免多个线程在第一个 null 判断时判断已实例化（实际因为指令重排序 instance 尚未指向分配的内存空间）。
 
 #### 4.静态变量初始化（饿汉，线程安全）
 
@@ -113,10 +155,10 @@ public class Singleton {
     }
     public static Singleton getInstance() {
         return instance;
-    }  
-}  
+    }
+}
 ```
-  
+
 - Singleton 中的静态变量 instance 基于 classloder 机制避免了多线程的同步问题。
 
 - 没有懒加载效果，instance 在 Singleton 装载的时候就实例化。
@@ -127,17 +169,17 @@ public class Singleton {
 public class Singleton {
     private static Singleton instance  = null;
 
-    static {  
-        instance = new Singleton();  
-    }  
+    static {
+        instance = new Singleton();
+    }
 
     private Singleton() {
 
     }
     public static Singleton getInstance() {
         return instance;
-    }  
-}  
+    }
+}
 ```
 
 - 同静态变量初始化的单例实现方式差不多。
@@ -160,21 +202,29 @@ public class Singleton {
 
 - 静态内部类中的静态变量 INSTANCE 基于 classloder 机制避免了多线程的同步问题。
 
-ClassLoader的loadClass方法在加载类的时候使用了synchronized关键字。也正是因为这样， 除非被重写，这个方法默认在整个装载过程中都是同步的，也就是保证了线程安全。
+ClassLoader 的 loadClass 方法在加载类的时候使用了 synchronized 关键字。也正是因为这样， 除非被重写，这个方法默认在整个装载过程中都是同步的，也就是保证了线程安全。
 
-所以，以上各种方法，虽然并没有显示的使用synchronized，但是还是其底层实现原理还是用到了synchronized。
+所以，以上各种方法，虽然并没有显示的使用 synchronized，但是还是其底层实现原理还是用到了 synchronized。
 
 - 懒加载，Singleton 装载的时候 INSTANCE 不一定被初始化，只有显示调用 getInstance() SingletonHolder 才会被装载从而 INSTANCE 才会初始化。
 
 #### 7.枚举
 
 ```java
-public enum Singleton {  
-    INSTANCE;  
+public enum Singleton {
+    INSTANCE;
 
-    public void whateverMethod() {  
-    }  
-}  
+    public void whateverMethod() {
+    }
+}
+```
+
+```kotlin
+enum class Singleton(val param: String) {
+    INSTANCE("instance");
+
+    fun whateverMethod() {}
+}
 ```
 
 - 避免多线程同步问题
@@ -183,7 +233,7 @@ public enum Singleton {
 
 ### 防御攻击
 
-由于类的创建不止通过new关键字一种方式，还有克隆、序列化、反射等方式。
+由于类的创建不止通过 new 关键字一种方式，还有克隆、序列化、反射等方式。
 
 #### 防御克隆攻击
 
@@ -238,8 +288,8 @@ public class Singleton {
 }
 ```
 
-- 不需要使用传统的锁机制来保证线程安全,CAS是一种基于忙等待的算法,依赖底层硬件的实现,相对于锁它没有线程切换和阻塞的额外消耗,可以支持较大的并行度。
+- 不需要使用传统的锁机制来保证线程安全,CAS 是一种基于忙等待的算法,依赖底层硬件的实现,相对于锁它没有线程切换和阻塞的额外消耗,可以支持较大的并行度。
 
-- 忙等待可能一直执行不成功(一直在死循环中),会对CPU造成较大的执行开销。
+- 忙等待可能一直执行不成功(一直在死循环中),会对 CPU 造成较大的执行开销。
 
-- N个线程同时执行到singleton = new Singleton();的时候，会有大量对象创建，很可能导致内存溢出。
+- N 个线程同时执行到 singleton = new Singleton();的时候，会有大量对象创建，很可能导致内存溢出。
