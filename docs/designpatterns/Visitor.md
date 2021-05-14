@@ -1,9 +1,9 @@
 # 访问者模式（Visitor）
 
-![访问者模式](https://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Visitor.png)
+![访问者模式](https://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Visitor.png)
 
-<a href = "https://www.draw.io/?lightbox=1#Uhttps://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Visitor.png">全屏</a> |
-<a href = "https://www.draw.io/#Uhttps://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Visitor.png">作为模板编辑为新图</a> |
+<a href = "https://www.draw.io/?lightbox=1#Uhttps://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Visitor.png">全屏</a> |
+<a href = "https://www.draw.io/#Uhttps://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Visitor.png">作为模板编辑为新图</a> |
 <a href = "https://www.draw.io/#HCodePoem/VDesignPatterns/master/docs/drawio/Visitor.drawio">编辑原图（需登录）</a>
 
 ## 定义（what）
@@ -107,7 +107,7 @@ public class Client {
 }
 ```
 
-### Android中的例子
+### Android 中的例子
 
 #### APT（Annotation Processing Tools）编译时注解
 
@@ -116,7 +116,7 @@ public class Client {
 - AbstractProcessor：注解处理器
 - AnnotationProcessorFactory：为某些注解类型创建注解处理器的工厂
 
-编辑器会检查AbstractProcessor的子类，并将所有添加了对应注解的元素传递到process()方法参数中进行调用。
+编辑器会检查 AbstractProcessor 的子类，并将所有添加了对应注解的元素传递到 process()方法参数中进行调用。
 
 对于编译器来说，代码中的元素结构基本是不变的。
 

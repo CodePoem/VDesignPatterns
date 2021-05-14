@@ -1,9 +1,9 @@
 # 原型模式（Prototype）
 
-![原型模式](https://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Prototype.png)
+![原型模式](https://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Prototype.png)
 
-<a href = "https://www.draw.io/?lightbox=1#Uhttps://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Prototype.png">全屏</a> |
-<a href = "https://www.draw.io/#Uhttps://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Prototype.png">作为模板编辑为新图</a> |
+<a href = "https://www.draw.io/?lightbox=1#Uhttps://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Prototype.png">全屏</a> |
+<a href = "https://www.draw.io/#Uhttps://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Prototype.png">作为模板编辑为新图</a> |
 <a href = "https://www.draw.io/#HCodePoem/VDesignPatterns/master/docs/drawio/Prototype.drawio">编辑原图（需登录）</a>
 
 ## 定义（what）
@@ -19,7 +19,7 @@
 
 ## 实践（how）
 
-使用原型模式比较多的场景就是克隆，实现Cloneable接口。
+使用原型模式比较多的场景就是克隆，实现 Cloneable 接口。
 
 克隆需要特别注意区分浅拷贝（只会克隆基本类型，其他类型只是拷贝了引用）和深拷贝，尽量使用深拷贝。
 
@@ -45,7 +45,7 @@ public class Prototype implements Cloneable {
 }
 ```
 
-其中fieldArratString只是拷贝了引用。
+其中 fieldArratString 只是拷贝了引用。
 
 ### 深拷贝
 
@@ -68,3 +68,4 @@ public class Prototype implements Cloneable {
         return null;
     }
 }
+```

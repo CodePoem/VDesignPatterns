@@ -1,9 +1,9 @@
 # 建造者模式（Builder）
 
-![建造者模式](https://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Builder.png)
+![建造者模式](https://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Builder.png)
 
-<a href = "https://www.draw.io/?lightbox=1#Uhttps://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Builder.png">全屏</a> |
-<a href = "https://www.draw.io/#Uhttps://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Builder.png">作为模板编辑为新图</a> |
+<a href = "https://www.draw.io/?lightbox=1#Uhttps://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Builder.png">全屏</a> |
+<a href = "https://www.draw.io/#Uhttps://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Builder.png">作为模板编辑为新图</a> |
 <a href = "https://www.draw.io/#HCodePoem/VDesignPatterns/master/docs/drawio/Builder.drawio">编辑原图（需登录）</a>
 
 ## 定义（what）
@@ -18,4 +18,4 @@
 
 ## 实践（how）
 
-在实际使用中，通常会去除UML图中Director角色，直接使用Builder的链式调用来进行对象的组装。多用于配置项的配置场景。
+在实际使用中，通常会去除 UML 图中 Director 角色，直接使用 Builder 的链式调用来进行对象的组装。多用于配置项的配置场景。

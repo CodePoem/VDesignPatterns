@@ -1,9 +1,9 @@
 # 桥接模式（Bridge）
 
-![桥接模式](https://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Bridge.png)
+![桥接模式](https://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Bridge.png)
 
-<a href = "https://www.draw.io/?lightbox=1#Uhttps://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Bridge.png">全屏</a> |
-<a href = "https://www.draw.io/#Uhttps://raw.githubusercontent.com/CodePoem/VDesignPatterns/master/docs/drawio/Bridge.png">作为模板编辑为新图</a> |
+<a href = "https://www.draw.io/?lightbox=1#Uhttps://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Bridge.png">全屏</a> |
+<a href = "https://www.draw.io/#Uhttps://raw.githubusercontents.com/CodePoem/VDesignPatterns/master/docs/drawio/Bridge.png">作为模板编辑为新图</a> |
 <a href = "https://www.draw.io/#HCodePoem/VDesignPatterns/master/docs/drawio/Bridge.drawio">编辑原图（需登录）</a>
 
 ## 定义（what）
@@ -80,6 +80,6 @@ public class Client {
 }
 ```
 
-### Android中的例子
+### Android 中的例子
 
 #### Window 和 WindowManager
