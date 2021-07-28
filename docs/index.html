@@ -17,6 +17,7 @@
         window.$docsify = {
             name: 'VDesignPatterns',
             repo: 'https://github.com/CodePoem/VDesignPatterns',
+            themeColor: '#EF9A9A',
             // 封面页
             coverpage: 'cover.md',
             // 主页
@@ -55,6 +56,21 @@
     <script src="https://unpkg.com/docsify-copy-code@2"></script>
     <!--分页导航-->
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <!--代码高亮-->
+    <!--https://cdn.jsdelivr.net/npm/prismjs@1/components/-->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-kotlin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
+    <!--docsify-tabs-->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
 </body>
+
+<style>
+    :root {
+        --docsifytabs-border-color: #EDEDED;
+        --docsifytabs-tab-highlight-color: #EF9A9A;
+    }
+</style>
 
 </html>
